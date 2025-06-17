@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Prontuário Eletrônico</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <header>
+    <h1>Prontuário Eletrônico</h1>
+  </header>
+  <main>
+    <form id="formProntuario">
+             <!-- Dados do Médico -->
+      <section>
+        <h2>Identificação do Atendente</h2>
+       <div class="campo">
+          <label>Nome do Médico:</label>
+          <input type="text" id="nomeMedico" required>
+        </div>
+        <div class="campo">
+          <label>Número do Conselho:</label>
+          <input type="text" id="numConselho" required>
+        </div>
+      </section>
+      <!-- Identificação do Paciente -->
+      <section>
+        <h2>Identificação do Paciente</h2>
+        <div class="campo">
+          <label>Nome:</label>
+          <input type="text" id="nomePaciente" required>
+        </div>
+        <div class="campo">
+          <label>Estado Civil:</label>
+          <input type="text" id="estadoCivil">
+        </div>
+        <div class="campo">
+          <label>Naturalidade:</label>
+          <input type="text" id="naturalidade">
+        </div>
+        <div class="campo">
+          <label>Procedência:</label>
+          <input type="text" id="procedencia">
+        </div>
+        <div class="campo">
+          <label>Idade:</label>
+          <input type="number" id="idade">
+        </div>
+        <div class="campo">
+          <label>Data de Nascimento:</label>
+          <input type="date" id="dataNascimento">
+        </div>
+        <div class="campo">
+          <label>Sexo:</label>
+          <select id="sexo">
+            <option value="">Selecione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label>Profissão:</label>
+          <input type="text" id="profissao">
+        </div>
+        <div class="campo">
+          <label>CNS:</label>
+          <input type="text" id="cns">
+        </div>
+        <div class="campo">
+          <label>Data do Atendimento:</label>
+          <input type="datetime-local" id="dataAtendimento" required>
+        </div>
+      </section>
+
+      <!-- Queixa Principal -->
+      <section>
+        <h2>Queixa Principal e Duração (QPD)</h2>
+        <textarea id="qpd" placeholder="Descreva a queixa principal..." required></textarea>
+      </section>
+
+      <!-- História da Doença Atual -->
+      <section>
+        <h2>História da Doença Atual (HDA)</h2>
+        <textarea id="hda" placeholder="Descreva a história da doença atual..."></textarea>
+      </section>
+
+      <!-- Interrogatório Sintomatológico -->
+      <section>
+        <h2>Interrogatório Sintomatológico</h2>
+        <div class="checkbox-group">
+          <h3>Geral</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Astenia</label>
+          <label><input type="checkbox"> Anorexia</label>
+          <label><input type="checkbox"> Perda de Peso</label>
+          <label><input type="checkbox"> Ganho de Peso</label>
+          <label><input type="checkbox"> Febre</label>
+          <label><input type="checkbox"> Edema</label>
+      
+          <h3>Cabeça e Pescoço</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Dor</label>
+          <label><input type="checkbox"> Tontura</label>
+          <label><input type="checkbox"> Desmaio</label>
+          <label><input type="checkbox"> Limitações de Movimento</label>
+          <label><input type="checkbox"> Alterações de Volume, forma e Sensibilidade</label>
+      
+          <h3>Pele</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Cianose</label>
+          <label><input type="checkbox"> Icterícia</label>
+          <label><input type="checkbox"> Palidez</label>
+          <label><input type="checkbox"> Alteração de pelos e unhas</label>
+          <label><input type="checkbox"> Alteração de Gânglios Linfáticos</label>
+          <label><input type="checkbox"> Hemorragias Cutâneas</label>
+      
+          <h3>Olhos</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Alteração de Acuidade Visual</label>
+          <label><input type="checkbox"> Uso de Lentes</label>
+          <label><input type="checkbox"> Escótomas</label>
+          <label><input type="checkbox"> Diplopia</label>
+          <label><input type="checkbox"> Fotofobia</label>
+          <label><input type="checkbox"> Dor</label>
+          <label><input type="checkbox"> Lacrimejamento</label>
+          <label><input type="checkbox"> Nictalopia</label>
+          <label><input type="checkbox"> Hemeralopia</label>
+      
+          <h3>Nariz</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Alteração de Acuidade Olfativa</label>
+          <label><input type="checkbox"> Hiposmia</label>
+          <label><input type="checkbox"> Herosmia</label>
+          <label><input type="checkbox"> Anosmia</label>
+          <label><input type="checkbox"> Parosmia</label>
+          <label><input type="checkbox"> Cacosmia</label>
+          <label><input type="checkbox"> Obstrução Nasal</label>
+          <label><input type="checkbox"> Secreção</label>
+          <label><input type="checkbox"> Espirros</label>
+          <label><input type="checkbox"> Epistaxe</label>
+      
+          <h3>Ouvidos</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Alteração de Acuidade Auditiva</label>
+          <label><input type="checkbox"> Dor</label>
+          <label><input type="checkbox"> Secreção</label>
+          <label><input type="checkbox"> Zumbido</label>
+          <label><input type="checkbox"> Sangramento</label>
+      
+          <h3>Respiratório</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Dispneia</label>
+          <label><input type="checkbox"> Tosse</label>
+          <label><input type="checkbox"> Expectoração</label>
+          <label><input type="checkbox"> Hemoptise</label>
+          <label><input type="checkbox"> Vômica</label>
+      
+          <h3>Cardiológico</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Palpitações</label>
+          <label><input type="checkbox"> Dor torácica</label>
+      
+          <h3>Gastrointestinal</h3>
+          <label><input type="checkbox"> Sem alteração</label>
+          <label><input type="checkbox"> Disfagia</label>
+          <label><input type="checkbox"> Regurgitação</label>
+          <label><input type="checkbox"> Pirose</label>
+          <label><input type="checkbox"> Empachamento Pós-prandial</label>
+          <label><input type="checkbox"> Náuseas</label>
+          <label><input type="checkbox"> Vômitos</label>
+          <label><input type="checkbox"> Eructações</label>
+          <label><input type="checkbox"> Hematêmese</label>
+          <label><input type="checkbox"> Dor Abdominal</label>
+          <label><input type="checkbox"> Constipação</label>
+          <label><input type="checkbox"> Diarreia</label>
+          <label><input type="checkbox"> Enterorragia</label>
+          <label><input type="checkbox"> Melena</label>
+          <label><input type="checkbox"> Alteração de Aspecto das Fezes</label>
+          <label><input type="checkbox"> Eliminação de Vermes</label>
+          <label><input type="checkbox"> Prurido Anorretal</label>
+        </div>
+
+        <h3>Geniturinário</h3>
+        <label><input type="checkbox"> Sem alteração</label>
+        <label><input type="checkbox"> Disúria</label>
+        <label><input type="checkbox"> Polaciúria</label>
+        <label><input type="checkbox"> Noctúria</label>
+        <label><input type="checkbox"> Hematúria</label>
+        <label><input type="checkbox"> Retenção Urinária</label>
+        <label><input type="checkbox"> Incontinência</label>
+        <label><input type="checkbox"> Corrimento Vaginal</label>
+        <label><input type="checkbox"> Disfunção Erétil</label>
+    
+        <h3>Músculo-Esquelético</h3>
+        <label><input type="checkbox"> Sem alteração</label>
+        <label><input type="checkbox"> Dor Articular</label>
+        <label><input type="checkbox"> Edema Articular</label>
+        <label><input type="checkbox"> Rigidez Matinal</label>
+        <label><input type="checkbox"> Fraqueza Muscular</label>
+        <label><input type="checkbox"> Dor Lombar</label>
+        <label><input type="checkbox"> Alteração Postural</label>
+    
+        <h3>Neurológico</h3>
+        <label><input type="checkbox"> Sem alteração</label>
+        <label><input type="checkbox"> Cefaleia</label>
+        <label><input type="checkbox"> Convulsões</label>
+        <label><input type="checkbox"> Parestesias</label>
+        <label><input type="checkbox"> Paralisias</label>
+        <label><input type="checkbox"> Tremores</label>
+        <label><input type="checkbox"> Alteração do Estado de Consciência</label>
+        <label><input type="checkbox"> Tontura</label>
+      </div>
+      </section>
+
+      <!-- Antecedentes Pessoais -->
+      <section>
+        <h2>Antecedentes Pessoais</h2>
+        <div class="campo">
+          <h3>Patologias</h3>
+          <label><input type="checkbox"> HAS</label>
+          <label><input type="checkbox"> DM</label>
+          <label><input type="checkbox"> DAC</label>
+          <label><input type="checkbox"> HiperTG</label>
+          <label><input type="checkbox"> HiperCL</label>
+          <label><input type="checkbox"> Obesidade</label>
+        </div>
+        
+        <div class="campo">
+          <h3>Doenças na Infância</h3>
+          <label><input type="checkbox"> Amigdalite</label>
+          <label><input type="checkbox"> Caxumba</label>
+          <label><input type="checkbox"> Sarampo</label>
+          <label><input type="checkbox"> Varicela</label>
+        </div>
+        
+        <div class="campo">
+          <h3>Exposição a Tóxicos</h3>
+          <label><input type="checkbox"> Tuberculose</label>
+          <label><input type="checkbox"> Hanseníase</label>
+          <label><input type="checkbox"> Infecções Epidêmicas</label>
+          <label><input type="text" placeholder="Outras..."></label>
+        </div>
+        
+        <div class="campo">
+          <h3>Histórico de Cirurgias ou Traumas</h3>
+          <label><input type="checkbox"> Transfusão Sanguínea</label>
+          <textarea id="cirurgiasTraumas" placeholder="Descreva o histórico de cirurgias ou traumas..."></textarea>
+        </div>
+        
+        <div class="campo">
+          <h3>Hábitos de Vida</h3>
+          <label>Alimentação:</label>
+          <textarea id="alimentacao" placeholder="Descreva os hábitos alimentares..."></textarea>
+          <label>Consumo de Bebida Alcoólica:</label>
+          <textarea id="bebida" placeholder="Descreva os hábitos relacionados ao álcool..."></textarea>
+          <label>Tabagismo:</label>
+          <textarea id="tabagismo" placeholder="Descreva o consumo de tabaco..."></textarea>
+          <label>Atividade Física:</label>
+          <textarea id="atividadeFisica" placeholder="Descreva a prática de atividades físicas..."></textarea>
+          <label>Rotina Diária e Vida Psicossocial:</label>
+          <textarea id="rotinaDiaria" placeholder="Descreva a rotina diária e a vida psicossocial..."></textarea>
+          <label>Religião:</label>
+          <input type="text" id="religiao" placeholder="Descreva a religião...">
+        </div>
+      </section>
+
+      <!-- Exame Físico -->
+      <section>
+        <h2>Exame Físico Geral</h2>
+        <div class="campo">
+          <h3>Estado Geral</h3>
+          <label><textarea id="estadoGeral" placeholder="Descreva o estado geral do paciente..."></textarea></label>
+        </div>
+        
+        <div class="campo">
+          <h3>Dados Antropométricos</h3>
+          <label>Altura (cm):</label>
+          <input type="number" id="altura" placeholder="Ex.: 170">
+          <label>Peso (kg):</label>
+          <input type="number" step="0.01" id="peso" placeholder="Ex.: 70.5">
+        </div>
+        
+        <div class="campo">
+          <h3>Sinais Vitais</h3>
+          <label>Pressão Arterial (mmHg):</label>
+          <input type="text" id="pa" placeholder="Ex.: 120/80">
+          <label>Frequência Cardíaca (bpm):</label>
+          <input type="number" id="fc" placeholder="Ex.: 72">
+          <label>Frequência Respiratória (rpm):</label>
+          <input type="number" id="fr" placeholder="Ex.: 18">
+          <label>Saturação de O2 (%):</label>
+          <input type="number" step="0.1" id="saturacao" placeholder="Ex.: 98">
+        </div>
+        
+        <div class="campo">
+          <h3>Aparelho Respiratório (AR)</h3>
+          <!-- Opções Normais -->
+          <label><input type="checkbox"> MV+ em AHT</label>
+          <label><input type="checkbox"> Sem Ruídos Adventícios</label>
+          <!-- Opções Alteradas -->
+          <label><input type="checkbox"> Estertores Crepitantes</label>
+          <label><input type="checkbox"> Sibilos</label>
+          <label><input type="checkbox"> Roncos</label>
+          <label><input type="checkbox"> Diminuição do MV</label>
+          <label><input type="checkbox"> Outro (especificar)</label>
+          <input type="text" placeholder="Especifique..." />
+        </div>
+        
+        <div class="campo">
+          <h3>Aparelho Cardiovascular (ACV)</h3>
+          <!-- Opções Normais -->
+          <label><input type="checkbox"> RCR em 2T</label>
+          <label><input type="checkbox"> Bulhas Normofonéticas</label>
+          <label><input type="checkbox"> Sem Sopro</label>
+          <!-- Opções Alteradas -->
+          <label><input type="checkbox"> Sopro Sistólico</label>
+          <label><input type="checkbox"> Sopro Diastólico</label>
+          <label><input type="checkbox"> B3 ou B4 audível</label>
+          <label><input type="checkbox"> Taquicardia</label>
+          <label><input type="checkbox"> Bradicardia</label>
+          <label><input type="checkbox"> Outro (especificar)</label>
+          <input type="text" placeholder="Especifique..." />
+        </div>
+        
+        <div class="campo">
+          <h3>Abdômen (ABD)</h3>
+          <!-- Opções Normais -->
+          <label><input type="checkbox"> Depressível</label>
+          <label><input type="checkbox"> Indolor à Palpação Superficial</label>
+          <label><input type="checkbox"> Indolor à Palpação Profunda</label>
+          <label><input type="checkbox"> RHA+ sem Visceromegalias</label>
+          <!-- Opções Alteradas -->
+          <label><input type="checkbox"> Distendido</label>
+          <label><input type="checkbox"> Doloroso à Palpação Superficial</label>
+          <label><input type="checkbox"> Doloroso à Palpação Profunda</label>
+          <label><input type="checkbox"> Ausência de RHA</label>
+          <label><input type="checkbox"> Visceromegalia (especificar)</label>
+          <label><input type="checkbox"> Outro (especificar)</label>
+          <input type="text" placeholder="Especifique..." />
+        </div>
+        
+        <div class="campo">
+          <h3>Membros Superiores (MMSS) e Inferiores (MMII)</h3>
+          <!-- Opções Normais -->
+          <label><input type="checkbox"> Pulsos Presentes Bilateralmente</label>
+          <label><input type="checkbox"> Simétricos</label>
+          <label><input type="checkbox"> Sem Edema em MMII</label>
+          <!-- Opções Alteradas -->
+          <label><input type="checkbox"> Pulso Ausente/Ausente em um lado</label>
+          <label><input type="checkbox"> Assimetria de Força</label>
+          <label><input type="checkbox"> Edema em MMII (indicar grau)</label>
+          <label><input type="checkbox"> Deformidades ou Contracturas</label>
+          <label><input type="checkbox"> Outro (especificar)</label>
+          <input type="text" placeholder="Especifique..." />
+        </div>
+      </section>
+
+      <!-- Conduta / Plano Terapêutico -->
+      <section>
+        <h2>Conduta / Plano Terapêutico</h2>
+        <textarea id="planoTerapeutico" placeholder="Descreva o plano terapêutico..."></textarea>
+      </section>
+
+      <button type="submit">Salvar Prontuário</button>
+    </form>
+  </main>
+  <footer>
+    <p>Adaptado para iPhone, Android, Windows e MacOS</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
