@@ -24,12 +24,15 @@ document.getElementById("formProntuario").addEventListener("submit", function (e
 // Adiciona botões para leitura em voz alta das perguntas
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("label, h2, h3").forEach((el) => {
+    // Armazena o texto original antes de adicionar o botão
+    const textoOriginal = el.textContent;
+
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = "\ud83d\udd0a"; // ícone de alto-falante
     btn.className = "audio-btn";
     btn.addEventListener("click", () => {
-      speak(el.textContent.replace(/\s+/g, " ").trim());
+      speak(textoOriginal.replace(/\s+/g, " ").trim());
     });
     el.appendChild(btn);
   });
