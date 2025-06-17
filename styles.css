@@ -59,3 +59,11 @@ body {
   button:hover {
     background: #0056b3;
   }
+
+  .audio-btn {
+    margin-left: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
